@@ -1,0 +1,16 @@
+
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "MCU Box-Office"
+
+format:
+  html:
+    theme: 
+      - Zephyr
+      - custom.scss
+    css: styles.css
+    mainfont: Montserrat
+    page-layout: custom

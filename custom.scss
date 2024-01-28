@@ -1,0 +1,2070 @@
+// scss-docs-start
+$bg-dark: #141414 !default;
+$bg-dark2: #201F23;
+// scss-docs-end
+
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Mono&display=swap');
+
+
+
+$header-font-weight: 500 !default;
+
+$body-bg: $bg-dark !default;
+
+$content-margin-left: 10px !default;
+
+$color-blue: #7692FF;
+$color-blue-light: #64B5F6;
+$color-red: #931B1F;
+$color-red-white1: #E9C4C4;
+$color-red-white2: #EBBEBE;
+$color-green: #35CE8D;
+$color-green-light: #C1FFC1;
+$color-yellow: #F7B538;
+$color-yellow-light: #F7B538;
+$color-purple: #791E94;
+$color-purple-light: #791E94;
+
+$color-text: #F8F9FA;
+$color-text1: #DEE2E6;
+$color-text2: #ADB5BD;
+$color-muted: #6C757D;
+$color-text3: #555555;
+$color-text4: #404040;
+
+$color-platform: rgba(0, 0, 0, 0.7);
+
+$b-radius: 5px;
+
+
+/*-- scss:rules --*/
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  color: $color-text;
+}
+
+#quarto-content {
+  padding: 5px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+}
+
+/* Delete*/
+.page-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  .page-main-header {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .page-sidebar {
+    display: none;
+    position: fixed;
+  }
+  
+  .page-nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 0.2rem;
+    
+    .nav-link {
+      width: fit-content;
+      font-size: 1rem;
+      font-weight: 500;
+      color: $color-muted;
+      text-decoration: underline;
+      text-decoration-color: $color-text4;
+      transition: .5s ease;
+      
+      &:hover {
+        color: $color-text;
+        text-decoration-color: $color-text;
+      }
+    }
+  }
+}
+/* ---------- */
+
+ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.page-header {
+  margin-bottom: 1rem;
+  
+  .page-title-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: $bg-dark2;
+    border-radius: $b-radius;
+    max-height: 100px;
+    padding: 0 0.3rem;
+    
+    .title {
+      font-size: 2rem;
+      font-weight: 500;
+      color: $color-text;
+      height: 100%;
+    }
+    
+    .p-navbar {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      
+      li {
+        height: 100%;
+        
+        a {
+          height: 100%;
+          font-size: 1rem;
+          font-weight: 600;
+          color: $color-text2;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          transition: .5s ease;
+          
+          &:hover {
+            color: $color-text;
+            text-decoration: underline;
+            text-decoration-color: $color-text;
+          }
+        }
+      }
+    }
+    
+    .open-icon {
+      display: none;
+      font-size: 1.2rem;
+      color: $color-text2;
+      transition: .5s ease;
+      
+      &:hover {color: $color-text;}
+    }
+  }
+  
+  .p-sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: $bg-dark2;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.4);
+    padding: 0;
+    
+    .icon-container {
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+      
+      .close-icon {
+        font-size: 1.5rem;
+        margin: auto;
+        color: $color-text2;
+        transition: .5s ease;
+        
+        &:hover {color: $color-text;}
+      }
+    }
+    
+    .list {
+      list-style: none;
+      padding-top: 2rem;
+      
+      li {
+        width: 100%;
+        padding: 0 auto;
+        
+        a {
+          font-size: 1.5rem;
+          font-weight: 500;
+          color: $color-text2;
+          transition: .5s ease;
+          
+          &:hover {color: $color-text;}
+        }
+      }
+    }
+  }
+  
+}
+
+.description-container {
+  text-overflow: auto;
+  
+  a {
+    float: right;
+    margin-left: 0.5rem;
+    
+    .mcu-logo {
+      width: 18rem;
+      height: 7rem;
+    }
+  }
+}
+
+
+.h-card {
+  margin: auto;
+  padding: 1rem;
+  border-radius: $b-radius;
+}
+
+.movie-home-stats {
+  margin: 2rem 0;
+  
+  .movie-count {
+    width: 100%;
+    height: 12rem;
+    background-color: $color-red;
+    color: $color-text;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    
+    .anchor {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+    
+    .between {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .title {
+        font-size: 1.4rem;
+        text-decoration: underline;
+      }
+      
+      .value-container {
+        width: 3.5rem;
+        height: 3.5rem;
+        border: 2px dashed $color-text1;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .value {
+          font-size: 1.6rem;
+          font-weight: 600;
+        }
+      }
+    }
+    
+    .desc {
+      .text-desc {
+        color: $color-red-white1;
+        
+        span {
+          color: $color-red-white2;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  
+  .revenue-stats {
+    width: 100%;
+    height: 12rem;
+    background-color: $color-red;
+    color: $color-text;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .inner-card {
+      height: 100%;
+      width: 30%;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+     
+      
+      .title {
+        font-size: 1.35rem;
+      }
+      
+      .main-value {
+        align-self: center;
+        font-size: 1.7rem;
+        font-weight: 600;
+      }
+      
+      .desc {
+        margin-top: 0.95rem;
+        
+        .title {
+          font-size: 0.9rem;
+          text-decoration: none;
+          color: $color-red-white2;
+        }
+        
+        .desc-value {
+          color: $color-red-white1;
+        } 
+      }
+    }
+    
+    .vertical-divider {
+      height: 80%;
+      width: 2px;
+      background-color: $color-red-white2;
+    }
+  }
+}
+
+.top-movies-franchise {
+  margin: 2rem 0;
+  
+  .poster-card {
+    border-radius: $b-radius;
+    width: 20rem;
+    height: 26.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-left: 2rem;
+    
+    .card-detail {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 1rem;
+      background-color: $color-platform;
+      border-bottom-right-radius: $b-radius;
+      border-bottom-left-radius: $b-radius;
+      width: 100%;
+      height: minmax(10rem, 40%);
+      
+      .card-name {
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        color: $color-text2;
+      }
+      .title-year {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .title {
+          font-size: 1.3rem;
+          font-weight: 500;
+          text-wrap: wrap;
+        }
+        
+        .year {
+          font-size: 0.7rem;
+          font-weight: 400;
+          color: $color-text2;
+        }
+      }
+      
+      .details {
+        font-size: 0.8rem;
+        font-weight: 400;
+      }
+      
+      .revenue {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 2rem;
+        
+        .title {
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+        
+        .value {
+          font-size: 1.3rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+
+.revenue-chart-section {
+  margin: 2rem 0;
+  
+  .insight {
+    &.overall-revenue {
+      margin-top: 5rem;
+    }
+  }
+}
+
+.top-movie {
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+  height: 25rem;
+  
+  .card-pic {
+    .pic {
+      width: 100%;
+      height: 20rem;
+    }
+  }
+  
+}
+
+.revenue-table {
+  .title {
+    font-weight: 500; 
+    font-size: 1.5rem;
+    
+    span {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+  
+  a {
+    color: #E0FFFF;
+    text-decoration: none;
+    transition: .5s ease;
+    
+    &:hover, &:focus {
+      text-decoration: underline;
+      text-decoration-thickness: max(1px, 0.0625rem);
+    }
+  }
+  
+  .movie-info {
+    display: flex;
+    align-items: center;
+    
+    .movie-poster {
+      width: 45px;
+      height: 68px;
+      box-shadow: 0 0 0 1px hsl(0, 0%, 95%);
+    }
+    
+    .movie-info-text {
+      margin-left: 0.75rem;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      
+      .movie-info-details {
+        margin-top: 0.125rem;
+        font-size: 0.75rem;
+        font-weight: 400;
+        color: hsl(0, 0%, 40%);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+        .rating {
+          width: 3rem;
+          display: inline-flex;
+          justify-content: center;
+          align-content: center;
+          border: 1px solid $color-muted;
+          border-radius: 3px;
+          cursor: pointer;
+          margin-right: 0.5rem;
+          transition: .5s ease;
+          
+          &:hover {
+            border-color: $color-text3;
+          }
+        }
+        
+        .add-space {
+          margin-left: 0.5rem;
+          text-decoration: underline;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  
+  .date-column {
+    color: $color-text2;
+    font-size: 0.8rem;
+  }
+  .release-duration-column {
+    color: $color-text2;
+    font-size: 0.8rem;
+  }
+  .total-column {
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  
+  .rating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 0.5rem;
+    
+    .rating-bar {
+      height: 0.7rem;
+      width: 100%;
+      background-color: transparent;
+      
+      .bar {
+        height: 100%;
+        background-color: $color-text2;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        transition: .5s ease;
+        
+        &:hover {
+          background-color: $color-text4;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/* Fanchise Page */
+
+.franchise-section {
+  padding: 1rem 0;
+  
+  &.even {
+    background-color: $bg-dark;
+  }
+  &.odd {
+    background-color: $bg-dark2;
+  }
+  
+  .movie-stats-card {
+    border-radius: $b-radius;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 13rem;
+    
+    
+    .text-platform {
+      border-radius: $b-radius;
+      background-color: $color-platform;
+      padding: 1rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5rem;
+      position: relative;
+      
+      .rank {
+        font-size: 2rem;
+        font-weight: 500;
+        letter-spacing: 5px;
+        color: $color-text1;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      
+      .franchise-name {
+        font-size: 1.9rem;
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-color: $color-text3;
+        text-wrap: wrap;
+        margin-top: 1rem;
+      }
+      
+      .genre {
+        color: $color-text1;
+        font-size: 0.9rem;
+      }
+      
+      .duration {
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+        color: $color-text1;
+      }
+    }
+  }
+  
+  .ls-movie-stats-card {
+    border-radius: $b-radius;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 13rem;
+    
+    .split-column {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: $b-radius;
+      background-color: $color-platform;
+      padding: 1rem;
+      width: 100%;
+      height: 100%;
+      
+      .stats-col {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        
+        .df_jcb_aic {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          column-gap: 4rem;
+          
+          .title {
+            font-size: 1.2rem;
+          }
+          
+          .value {
+            font-size: 1.3rem;
+            font-weight: 500;
+          }
+        }
+        
+        .rev-container {
+          display: flex;
+          flex-direction: column;
+          
+          .rev-items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 2.5rem;
+            
+            .title {
+              font-size: 1.2rem;
+            }
+            
+            .value {
+              font-size: 1.3rem;
+              font-weight: 500;
+            }
+          }
+          
+          .bar-chart {
+            width: 100%;
+            height: 6px;
+            background-color: $color-platform;
+            
+            .bar {
+              &.total {
+                background-color: $color-text4;
+              }
+              &.domestic {
+                background-color: $color-text2;
+              }
+              &.foreign {
+                background-color: $color-text1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .top-movie-card {
+    border-radius: $b-radius;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    
+    .card-detail {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: $color-platform;
+      height: 45%;
+      width: 100%;
+      padding: 0.8rem;
+      border-bottom-right-radius: $b-radius;
+      border-bottom-left-radius: $b-radius;
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.85rem;
+      
+      .card-name {font-size: 0.9rem;}
+      
+      .title-year {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+        .title {
+          font-size: 1.1rem;
+          font-weight: 500;
+          text-wrap: warp;
+          width: 200px;
+          
+          &.Doctor-Strange {
+            font-size: 0.9rem;
+          }
+        }
+        
+        .year {
+          font-size: 0.8rem;
+        }
+      }
+      
+      .box-rev {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 1.5rem;
+        
+        .title {font-size: 1rem; font-weight: 600;}
+        .value {font-size: 1.1rem; font-weight: 600;}
+      }
+      
+    }
+  }
+  
+  .percent-change-indicator-column {
+    
+    .change-icon{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.section-divider {
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #FFFFFF;
+  margin: 2.5rem 0;
+}
+
+
+
+/* About Page */
+
+.about-page {
+  margin: auto;
+  
+  .a-column {
+    margin: 0 auto;
+    width: 80%;
+    height: 570px;
+    background-color: $bg-dark2;
+    border-radius: $b-radius;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    
+    &.report-info {
+      .title {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      
+      .a-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        
+        .info-text-link {
+          font-size: 1rem;
+          color: $color-text1;
+          text-decoration: underline;
+        }
+        
+        &.comp-info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          
+          .info {
+            text-align: center;
+            font-size: 0.9rem;
+          }
+        }
+      
+      }
+    }
+
+    &.report-framework-creator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 4rem;
+      
+      .a-row {
+        &.framework-libraries {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 2rem;
+          
+          .framework {
+            display: flex;
+            justify-content: center;
+            column-gap: 0.7rem;
+            font-size: 1.2rem;
+            
+            .title {
+              font-weight: 500;
+            }
+           
+            .framework-link {
+              color: $color-text1;
+              text-decoration: underline;
+            } 
+          }
+          
+          .libraries {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            
+            .library-link {
+              width: 8rem;
+              height: 2.5rem;
+              background-color: $color-text4;
+              border-radius: $b-radius;
+              padding: 0.5rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              column-gap: 0.5rem !important;
+              text-decoration: none;
+              transition: .5s even;
+              
+              &:hover {
+                background-color: $color-text3;
+              }
+              
+              .pkg-text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: 0.3rem !important;
+              }
+            }
+          }
+        }
+      }
+      .about-me {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+        
+        .name {
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+        
+        .profile-image {
+          width: 6rem;
+          height: 6rem;
+          border: 2px solid $color-text2;
+          border-radius: 50%;
+        }
+        
+        .web-link {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+
+/* Navigation links */
+
+
+.navigate-page {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .multi-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 3rem;
+  }
+  
+  .c-nav-link {
+    
+    .circle-border {
+      width: 3.5rem;
+      height: 3.5rem;
+      padding: 1rem;
+      border: 2px solid $color-text;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: .5s ease;
+      
+      i {
+        font-size: 2.2rem;
+        color: $color-text;
+        transition: .5s ease;
+      }
+      
+      &:hover {
+        border-color: $color-text3;
+        
+        i {
+          color: $color-text3;
+        }
+      }
+    }
+  }
+  
+}
+
+
+/* Bootstrap tabset  */
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #e63434;
+    background-color: #141414;
+    border-color: #dee2e6 #dee2e6 #141414;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    box-shadow: inset 0 -2px 0 #e63434;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid rgba(0,0,0,0);
+}
+
+.tab-content {
+  border-color: $bg-dark;
+}
+
+
+// Scroll bar ======================================
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #495057;
+  border-radius: 4px;
+  
+  &:hover {
+    background: $color-text4;
+  }
+}
+
+
+::-webkit-scrollbar-track {
+  background: #201F23;;
+}
+
+
+/*--------------- Small Screens -----------------*/
+@media (max-width: 425px) {
+  .page-header {
+    .page-title-nav-container {
+      gap: 0.5rem;
+      padding: 0.4rem;
+      
+      .title {
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0;
+      }
+      
+      .p-navbar {display: none;}
+      
+      .open-icon {display: block;}
+    }
+  }
+  
+  .description-container {
+    a {
+      margin-left: 0;
+      margin-right: 0;
+      
+      .mcu-logo {
+        width: 11rem;
+        height: 6rem;
+      }
+    }
+  }
+  
+  .movie-home-stats {
+
+    .movie-count {
+      width: 100%;
+      height: 10rem;
+      row-gap: 0.5rem;
+      
+      .anchor {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+      
+      .between {
+        .title {font-size: 1.3rem;}
+        
+        .value-container {
+          width: 3.3rem;
+          height: 3.3rem;
+          
+          .value {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .revenue-stats {
+      width: 100%;
+      height: 32rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      
+      .inner-card {
+        height: 80%;
+        width: 100%;
+        row-gap: 0.3rem;
+        
+        .main-value {font-size: 1.5rem;}
+        
+        .desc {
+          margin-top: 0.6rem;
+          column-gap: 0.5rem;
+        }
+      }
+      
+      .vertical-divider {
+        height: 2px;
+        width: 80%;
+        background-color: $color-red-white2;
+        margin: 1rem 0;
+      }
+    }
+
+  }
+  
+  .top-movies-franchise {
+
+    .poster-card {
+      width: 100%;
+      height: 24rem;
+      margin-left: 0;
+      
+      .card-detail {
+        .title-year {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          
+          .title {font-size: 1.2rem;}
+        }
+        
+        .details {font-size: 0.75rem;}
+      }
+    }
+  }
+  
+  .franchise-section {
+    padding: 1rem 0;
+    
+    .movie-stats-card {
+      height: 13rem;
+      
+      .text-platform {
+        padding: 1rem;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+        position: relative;
+        
+        .rank {
+          font-size: 2rem;
+          font-weight: 600;
+          letter-spacing: 3px;
+        }
+        
+        .franchise-name {
+          font-size: 1.6rem;
+          font-weight: 600;
+          margin-top: 1.5rem;
+        }
+        
+        .genre {font-size: 0.8rem;}
+        
+        .duration {
+          font-size: 1.2rem;
+          letter-spacing: 2px;
+        }
+      }
+    }
+    
+    .ls-movie-stats-card {
+      width: 100%;
+      height: 28rem;
+      
+      .split-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        
+        .stats-col {
+          row-gap: 0.5rem;
+          
+          .df_jcb_aic {
+            column-gap: 3rem;
+            
+            .title {font-size: 1.1rem;}
+            
+            .value {font-size: 1.2rem;}
+          }
+          
+          .rev-container {
+            display: flex;
+            flex-direction: column;
+            
+            .rev-items {
+              column-gap: 1.2rem;
+              
+              .title {font-size: 1.1rem;}
+              
+              .value {font-size: 1.2rem;}
+            }
+            
+            .bar-chart {height: 4px;}
+          }
+        }
+      }
+    }
+    
+    .top-movie-card {
+      height: 18.5rem;
+      
+      .card-detail {
+        height: 50%;
+        padding: 0.7rem;
+        row-gap: 0.8rem;
+        
+        .card-name {font-size: 0.9rem;}
+        
+        .title-year {
+          .title {
+            font-size: 1rem;
+            font-weight: 600;
+            width: 250px;
+            
+            &.Doctor-Strange {font-size: 0.9rem;}
+          }
+        }
+        
+      }
+    }
+    
+    .percent-change-indicator-column {
+      
+      .change-icon{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  
+  .about-page {
+    margin: 2rem auto;
+    
+    .a-column {
+      width: 100%;
+      height: 590px;
+      padding: 1rem;
+      text-overflow: hidden;
+      
+      &.report-info {
+        .title {font-size: 1rem;}
+        
+        .a-row {
+          margin-bottom: 1.5rem;
+          
+          .info-text-link {font-size: 0.8rem;}
+          
+          &.comp-info {
+            .info {font-size: 0.85rem;}
+          }
+          
+          &.date {
+            .title {
+              font-size: 0.9rem;
+              
+              span {
+                font-size: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+  
+      &.report-framework-creator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 4rem;
+        
+        .a-row {
+          &.framework-libraries {
+            row-gap: 2rem;
+            
+            .framework {
+              column-gap: 0.55rem;
+              font-size: 1rem;
+            }
+          }
+        }
+        .about-me {
+          row-gap: 1rem;
+          
+          .name {font-size: 1rem;}
+        }
+      }
+    }
+  }
+}
+
+
+/*--------------- Medium Screens -----------------*/
+@media (min-width: 426px) and (max-width: 768px) {
+  
+  .page-header {
+    .page-title-nav-container {
+      
+      .title {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      
+      .p-navbar {display: flex;}
+      
+      .open-icon {display: none;}
+    }
+  }
+  
+  .movie-home-stats {
+    .movie-count {
+      width: 100%;
+      height: 14rem;
+      row-gap: 1rem;
+      
+      .anchor {font-size: 1.2rem;}
+      
+      .between {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 0.6rem;
+        
+        .title {font-size: 1.2rem;}
+        
+        .value-container {
+          width: 3rem;
+          height: 3rem;
+          
+          .value {font-size: 1.3rem;}
+        }
+      }
+      
+      .desc {
+        .text-desc {font-size: 0.9rem;}
+      }
+    }
+    
+    .revenue-stats {
+      height: 14rem;
+      
+      .inner-card {
+        height: 100%;
+        width: 30%;
+        padding: 0 0.5rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+       
+        
+        .title {font-size: 1.2rem;}
+        
+        .main-value {font-size: 1.4rem;}
+        
+        .desc {
+          margin-top: 0.8rem;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          column-gap: 0.7rem;
+          
+          .title {
+            font-size: 0.75rem;
+          }
+          
+          .desc-value {
+            font-size: 0.75rem;
+          } 
+        }
+      }
+      
+      .vertical-divider {width: 1px;}
+    }
+  }
+  
+  .top-movies-franchise {
+    margin: 2rem 0;
+    
+    .scrollable-text {
+      max-height: 22rem;
+      overflow-y: scroll;
+    }
+    
+    .poster-card {
+      width: 13rem;
+      height: 22rem;
+      margin-left: 0;
+      
+      .card-detail {
+        padding: 0.5rem;
+        width: 100%;
+        height: minmax(10rem, 40%);
+        
+        .card-name {
+          font-size: 0.8rem;
+          margin-bottom: 0.5rem;
+        }
+        .title-year {
+
+          .title {
+            font-size: 1rem;
+            font-weight: 500;
+          }
+        }
+        
+        .details {font-size: 0.65rem;}
+        
+        .revenue {
+          .value {font-size: 1.1rem;}
+        }
+      }
+    }
+  }
+  
+  .revenue-chart-section {
+    margin: 2rem 0;
+    
+    .scrollable-text {
+       max-height: 33rem;
+       overflow-y: scroll;
+    }
+    
+    .insight {
+      &.overall-revenue {
+        margin-top: 5rem;
+      }
+    }
+  }
+  
+  .franchise-section {
+    padding: 1rem 0;
+    
+    .movie-stats-card {
+      height: 12rem;
+      
+      
+      .text-platform {
+        padding: 0.5rem;
+        row-gap: 0.5rem;
+        
+        .rank {
+          font-size: 1.7rem;
+          font-weight: 600;
+          letter-spacing: 0;
+        }
+        
+        .franchise-name {
+          font-size: 1.3rem;
+          font-weight: 500;
+          margin-top: 1.5rem;
+        }
+        
+        .genre {font-size: 0.75rem;}
+        
+        .duration {
+          font-size: 1rem;
+          letter-spacing: 0;
+        }
+      }
+    }
+    
+    .ls-movie-stats-card {
+      height: 12rem;
+      
+      .split-column {
+        padding: 0.6rem;
+        column-gap: 1rem;
+        
+        .stats-col {
+          display: flex;
+          flex-direction: column;
+          row-gap: 0.5rem;
+          
+          &.rev {row-gap: 1.1rem;}
+          
+          .df_jcb_aic {
+            column-gap: 1.5rem;
+            
+            .title {font-size: 0.9rem;}
+            
+            .value {font-size: 1rem;}
+          }
+          
+          .rev-container {
+            display: flex;
+            flex-direction: column;
+            
+            .rev-items {
+              column-gap: 1.5rem;
+              
+              .title {font-size: 0.9rem;}
+              
+              .value {font-size: 1rem;}
+            }
+          }
+        }
+      }
+    }
+    
+    .top-movie-card {
+      height: 22rem;
+      
+      .card-detail {
+        height: 45%;
+        padding: 0.3rem;
+        row-gap: 0.8rem;
+        
+        .title-year {
+          align-items: flex-start;
+          .title {
+            font-size: 1rem;
+            width: 200px;
+            
+            &.Doctor-Strange {
+              font-size: 0.75rem;
+              text-overflow: hidden;
+            }
+            &.Spider-Man {
+              font-size: 0.75rem;
+              text-overflow: hidden;
+            }
+            &.Guardians-of-the-Galaxy {
+              font-size: 0.75rem;
+              text-overflow: hidden;
+            }
+          }
+          
+          .year {font-size: 0.7rem;}
+        }
+        
+        .box-rev {
+          column-gap: 1rem;
+          
+          .title {font-size: 0.85rem; font-weight: 600;}
+          .value {font-size: 1rem; font-weight: 600;}
+        }
+      }
+    }
+  }
+  
+  .about-page {
+    margin: 1rem auto;
+    
+    .a-column {
+      margin: 0 auto;
+      width: 100%;
+      height: 610px;
+      padding: 2rem;
+      
+      &.report-info {
+        .title {font-size: 1.1rem;}
+        
+        .a-row {
+          margin-bottom: 1.5rem;
+          
+          .info-text-link {font-size: 0.9rem;}
+          
+          &.comp-info {font-size: 0.9rem;}
+          
+          &.date {
+            .title {
+              font-size: 1rem;
+              
+              span {
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+      }
+  
+      &.report-framework-creator {
+        row-gap: 4rem;
+        
+        .a-row {
+          &.framework-libraries {
+            row-gap: 2rem;
+            
+            .framework {font-size: 1rem;}
+          }
+        }
+        
+        .about-me {
+          
+          .name {font-size: 1rem;}
+          
+          .web-link {font-size: 0.9rem;}
+        }
+      }
+    }
+  }
+}
+
+
+/*--------------- Moderate Large Screens ---------*/
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  
+  .movie-home-stats {
+    .movie-count {
+      width: 100%;
+      
+      .between {
+        
+        .title {font-size: 1.3rem;}
+        
+        .value-container {
+          width: 3rem;
+          height: 3rem;
+          
+          .value {font-size: 1.3rem;}
+        }
+      }
+    }
+    
+    .revenue-stats {
+      
+      .inner-card {
+        height: 100%;
+        width: 30%;
+        padding: 0 0.2rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+       
+        
+        .title {font-size: 1.1rem;}
+        
+        .main-value {font-size: 1.6rem;}
+        
+        .desc {
+          margin-top: 1rem;
+          column-gap: 0.3rem;
+          
+          .title {font-size: 0.95rem;}
+          
+          .desc-value {font-size: 0.95rem;} 
+        }
+      }
+      
+      .vertical-divider {width: 1px;}
+    }
+  }
+  
+  .top-movies-franchise {
+    margin: 2rem 0;
+    
+    .poster-card {
+      width: 18rem;
+      height: 25rem;
+      margin-left: 0;
+      
+      .card-detail {
+        padding: 1rem;
+        width: 100%;
+        height: minmax(10rem, 40%);
+        
+        .card-name {
+          font-size: 0.8rem;
+          margin-bottom: 0.5rem;
+        }
+        .title-year {
+
+          .title {
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+        }
+        
+        .details {font-size: 0.75rem;}
+        
+        .revenue {
+          .value {font-size: 1.2rem;}
+        }
+      }
+    }
+  }
+  
+  .franchise-section {
+
+    .movie-stats-card {
+
+      .text-platform {
+        row-gap: 0.5rem;
+        
+        .rank {letter-spacing: 0;}
+        
+        .franchise-name {
+          font-size: 1.6rem;
+          margin-top: 1.5rem;
+        }
+        
+        .duration {
+          font-size: 1.1rem;
+          letter-spacing: 2px;
+        }
+      }
+    }
+    
+    .top-movie-card {
+      
+      .card-detail {
+        row-gap: 0.8rem;
+        
+        .title-year {
+          align-items: flex-start;
+          .title {
+            font-size: 1.2rem;
+            width: 200px;
+            
+            &.Doctor-Strange {
+              font-size: 0.8rem;
+              text-overflow: hidden;
+            }
+            &.Spider-Man {
+              font-size: 0.9rem;
+              text-overflow: hidden;
+            }
+            &.Captain-America {
+              font-size: 0.9rem;
+              text-overflow: hidden;
+            }
+            &.Guardians-of-the-Galaxy {
+              font-size: 0.9rem;
+              text-overflow: hidden;
+            }
+          }
+          
+          .year {font-size: 0.75rem;}
+        }
+        
+        .box-rev {
+          column-gap: 1rem;
+          
+          .title {font-size: 0.9rem; font-weight: 600;}
+          .value {font-size: 1rem; font-weight: 600;}
+        }
+      }
+    }
+  }
+  
+  .about-page {
+    margin: 1rem auto;
+    
+    .a-column {
+      margin: 0 auto;
+      width: 100%;
+      height: 600px;
+      padding: 2rem;
+      
+
+    }
+  }
+}
+
+
+/*--------------- Very Large Screens --------------*/
+@media (min-width: 1500px) {
+  #quarto-content {
+    padding: 5px;
+    padding-top: 50px;
+    padding-right: 100px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+  }
+    
+  .movie-home-stats {
+
+    .movie-count {
+      height: 15rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+      padding: 1rem 2rem;
+      
+      .anchor {font-size: 2rem;}
+      
+      .between {
+        
+        .title {font-size: 2rem;}
+        
+        .value-container {
+          width: 5rem;
+          height: 5rem;
+          border: 3px dashed $color-text1;
+          margin-right: 1rem;
+          
+          .value {font-size: 2.3rem;}
+        }
+      }
+      
+      .desc {
+        .text-desc {
+          font-size: 1.2rem;
+          
+          span {font-size: 1rem;}
+        }
+      }
+    }
+    
+    .revenue-stats {
+      height: 15rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      
+      .inner-card {
+        width: 30%;
+        padding: 0 2.5rem;
+        row-gap: 1.5rem;
+       
+        
+        .title {font-size: 2rem;}
+        
+        .main-value {
+          font-size: 2.4rem;
+          font-weight: 600;
+        }
+        
+        .desc {
+          margin-top: 0.8rem;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          column-gap: 0.7rem;
+          
+          .title {font-size: 1.3rem;}
+          
+          .desc-value {font-size: 1.5rem;} 
+        }
+      }
+      
+      .vertical-divider {width: 4px;}
+    }
+    
+  }
+  
+  .top-movies-franchise {
+    
+    .poster-card {
+      width: 30rem;
+      height: 28rem;
+      margin: auto;
+      
+      .card-detail {
+        padding: 1rem;
+        width: 100%;
+        height: 50%;
+        
+        .card-name {
+          font-size: 1.2rem;
+          font-weight: 500;
+          margin-bottom: 0.6rem;
+        }
+        
+        .title-year {
+          display: flex;
+          justify-content: flex-start;
+          column-gap: 2rem;
+          
+          .title {font-size: 2rem;}
+          
+          .year {font-size: 1.3rem;}
+        }
+        
+        .details {
+          font-size: 1.2rem;
+          font-weight: 400;
+        }
+        
+        .revenue {
+          .title {font-size: 2rem;}
+          
+          .value {font-size: 2.2rem;}
+        }
+      }
+    }
+  }
+  
+  .franchise-section {
+    
+    .movie-stats-card {
+      width: 100%;
+      height: 13rem;
+      
+      .text-platform {
+        padding: 1rem 2rem;
+        row-gap: 0.7rem;
+        
+        .rank {
+          font-size: 3rem;
+          font-weight: 600;
+        }
+        
+        .franchise-name {font-size: 2.1rem;}
+        
+        .genre {font-size: 1.3rem;}
+      }
+    }
+    
+    .ls-movie-stats-card {
+      
+      .split-column {
+        
+        .stats-col {
+          display: flex;
+          flex-direction: column;
+          row-gap: 1rem;
+          
+          .df_jcb_aic {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 4rem;
+            
+            .title {font-size: 1.6rem;}
+            
+            .value {
+              font-size: 1.7rem;
+              font-weight: 600;
+            }
+          }
+          
+          .rev-container {
+            display: flex;
+            flex-direction: column;
+            
+            .rev-items {
+              
+              .title {font-size: 1.5rem;}
+              
+              .value {
+                font-size: 1.6rem;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    .top-movie-card {
+      height: 21rem;
+      
+      .card-detail {
+        padding: 1rem 2rem;
+        row-gap: 0.8rem;
+        
+        .card-name {font-size: 1.3rem;}
+        
+        .title-year {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          column-gap: 2rem;
+          
+          .title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            width: 320px;
+            
+            &.Doctor-Strange {
+              font-size: 1.2rem;
+              line-height: 20px;
+            }
+            &.Captain-America  {
+              font-size: 1.5rem;
+              line-height: 20px;
+            }
+            &.Guardians-of-the-Galaxy {
+              font-size: 1.5rem;
+              line-height: 20px;
+            }
+            &.Spider-Man {
+              font-size: 1.3rem;
+              line-height: 20px;
+            }
+          }
+          
+          .year {
+            font-size: 1.2rem;
+            &.Spider-Man {
+              font-size: 0.9rem;
+              line-height: 20px;
+            }
+          }
+        }
+        
+        .box-rev {
+          column-gap: 2rem;
+          
+          .title {font-size: 1.3rem;}
+          .value {font-size: 1.5rem;}
+        }
+      }
+    }
+    
+    .percent-change-indicator-column {
+      
+      .change-icon{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  
+  .about-page {
+    margin: auto;
+    
+    .a-column {
+      margin: 0 auto;
+      width: 80%;
+      height: 800px;
+      padding: 3rem 2rem;
+      
+      &.report-info {
+        .title {font-size: 2rem;}
+        
+        .a-row {
+          .info-text-link {font-size: 1.5rem;}
+          
+          &.comp-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .info {
+              text-align: center;
+              font-size: 1.3rem;
+            }
+          }
+        }
+      }
+  
+      &.report-framework-creator {
+        row-gap: 4rem;
+        
+        .a-row {
+          &.framework-libraries {
+            
+            .framework {
+              column-gap: 1rem;
+              font-size: 2rem;
+            }
+            
+            .libraries {
+              gap: 1rem;
+              
+              .library-link {
+                width: 12rem;
+                height: 3.5rem;
+                font-size: 1.5rem;
+              }
+            }
+          }
+        }
+        
+        .about-me {
+          row-gap: 1.5rem;
+          
+          .name {
+            font-size: 2rem;
+            font-weight: 500;
+          }
+          
+          .profile-image {
+            width: 8rem;
+            height: 8rem;
+            border: 4px solid $color-text2;
+          }
+          
+          .web-link {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
